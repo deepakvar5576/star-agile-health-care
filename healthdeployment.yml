@@ -2,19 +2,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: health-project-all
+  name: health-all
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: health-project-all
+      app: health-all
   template:
     metadata:
       labels:
-        app: health-project-all
+        app: health-all
     spec:
       containers:
-        - name: health-project
+        - name: health
           image: deepakvarshney5576/health-project:1.0
           ports:
             - containerPort: 8082
@@ -25,11 +25,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: health-project-all
+  name: health-all
 spec:
   type: NodePort
   ports:
     - port: 8082
       targetPort: 8082
   selector:
-    app: health-project-all
+    app: health-all
