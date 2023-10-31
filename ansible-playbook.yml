@@ -20,4 +20,4 @@
   #- name : delete all containers
     #shell: docker rm $(docker ps -a -q)
   - name: Deploy Docker Container
-    command: docker run -itd -p 8091:8082 deepakvarshney5576/health-project:1.0
+    command: docker run -itd -p 8095:8082 deepakvarshney5576/health-project:1.0
